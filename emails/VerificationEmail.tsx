@@ -7,11 +7,10 @@ import {
   Row,
   Section,
   Text,
-  Button,
 } from '@react-email/components';
 
 
-export default function VerificationEmail({ fullName, otp }: VerificationEmailProps) {
+export default function VerificationEmail({ fullName, otp }) {
   return (
     <Html lang="en" dir="ltr">
       <Head>
