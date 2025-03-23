@@ -10,7 +10,7 @@ import {
 } from "@react-email/components";
 interface VerificationEmailProps {
   fullName: string;
-  otp: string | number;
+  otp: string ;
 }
 
 export default function VerificationEmail({
