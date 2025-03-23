@@ -120,12 +120,17 @@ const Page = () => {
       });
       toast.success("Work submitted!");
       setIsOpen(false); // Close modal on success
+      setFormData({
+        description: "",
+        githubRepoLink: "",
+        modifications: "",
+        uploadImage: null,
+        videoDemoLink: "",
+        milestone: {},
+      });
     } catch (error) {
-      console.error(
-        "Error submitting form:",
-        error.response?.data || error.message
-      );
-      toast.error("Failed to add milestone");
+      console.error(error)
+      toast.error(error.response.data.error);
     }
   };
 

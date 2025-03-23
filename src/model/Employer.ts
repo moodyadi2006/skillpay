@@ -91,7 +91,6 @@ const JobSchema: Schema<JobPost> = new Schema<JobPost>({
         },
         paid: {
           type: Boolean,
-          required: true,
         },
       },
     ],
