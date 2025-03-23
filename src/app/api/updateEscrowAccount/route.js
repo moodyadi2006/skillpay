@@ -3,7 +3,7 @@ import { EmployerModel } from "@/model/Employer";
 import { JobModel } from "@/model/Employer";
 import dbConnect from "@/lib/dbConnect";
 
-export async function PATCH(request: Request) {
+export async function PATCH() {
   await dbConnect();
   try {
     const { email, recipentId, amount, orderId } = await request.json();
@@ -34,7 +34,7 @@ export async function PATCH(request: Request) {
 
     // Update milestones for jobs where status is "completed"
     for (const job of jobs) {
-      job.mileStones.forEach((mileStone: unknown) => {
+      job.mileStones.forEach((mileStone) => {
         if (mileStone?.status === "completed") {
           mileStone.paid = true;
         }

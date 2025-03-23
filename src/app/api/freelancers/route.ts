@@ -5,7 +5,6 @@ export async function GET() {
   await dbConnect();
   try {
     const freelancers = await FreelancerModel.find({}).populate("resume");
-    console.log(freelancers)
     return new Response(JSON.stringify(freelancers), {
       status: 200,
       headers: { "Content-Type": "application/json" },

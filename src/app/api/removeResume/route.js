@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import { JobModel } from "@/model/Employer";
 
-export async function PATCH(request: Request) {
+export async function PATCH() {
   await dbConnect();
 
   try {
@@ -15,14 +15,6 @@ export async function PATCH(request: Request) {
         { status: 401 }
       );
     }
-
-    console.log(job.mileStones, "   ", resume._id);
-
-    // Update every milestone's freelancer with the given resume
-    job.mileStones = job.mileStones.map((milestone) => ({
-      ...milestone,
-      freelancer: resume, // Directly replacing freelancer with resume
-    }));
 
     // Remove the resume from freelancersResume where resume._id matches
     job.freelancersResume = job.freelancersResume.filter(

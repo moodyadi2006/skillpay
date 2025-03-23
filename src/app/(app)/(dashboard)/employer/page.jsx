@@ -490,7 +490,6 @@ const Page = () => {
                                   {resume.phoneNumber}
                                 </div>
 
-                                {/* Resume Details in Grid */}
                                 <div className="grid grid-cols-2 gap-4 mt-4 text-gray-700">
                                   <div>
                                     <p className="font-medium">
@@ -869,7 +868,8 @@ const Page = () => {
                     No Pending Reviews
                   </h3>
                   <p className="text-gray-500">
-                    You don&apos;t have any work submissions to review at the moment.
+                    You don&apos;t have any work submissions to review at the
+                    moment.
                   </p>
                 </div>
               )}

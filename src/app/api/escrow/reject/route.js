@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import EscrowModel from "@/model/Escrow";
 
-export async function PATCH(request: Request) {
+export async function PATCH() {
   await dbConnect();
   try {
     const { reviewId } = await request.json();

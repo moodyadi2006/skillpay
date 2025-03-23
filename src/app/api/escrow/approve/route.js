@@ -1,13 +1,14 @@
 import dbConnect from "@/lib/dbConnect";
 import EscrowModel from "@/model/Escrow";
 
-export async function PATCH(request: Request) {
+export async function PATCH() {
   await dbConnect();
   try {
     const { reviewId } = await request.json();
-    const escrow = await EscrowModel.findById(reviewId).populate("jobId");
+    const escrow = await EscrowModel.findById(reviewId)
+    
     const freelancerId =
-      escrow?.jobId?.mileStones?.[0]?.freelancer?._id || null;
+      escrow?.jobId?.mileStones[0]?.freelancer?._id || null;
 
     if (!escrow) {
       return Response.json({ message: "Escrow not found" }, { status: 404 });

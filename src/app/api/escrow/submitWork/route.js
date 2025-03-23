@@ -1,19 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import dbConnect from "@/lib/dbConnect";
 import EscrowModel from "@/model/Escrow";
 import { JobModel } from "@/model/Employer";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   await dbConnect();
 
   try {
     const formData = await request.formData();
-    const description = formData.get("description") as string;
-    const githubRepoLink = formData.get("githubRepoLink") as string;
-    const modifications = formData.get("modifications") as string;
-    const videoDemoLink = formData.get("videoDemoLink") as string;
-    const file = formData.get("uploadImage") as File | null;
-    const milestone = formData.get("milestone") as string;
+    const description = formData.get("description") ;
+    const githubRepoLink = formData.get("githubRepoLink") ;
+    const modifications = formData.get("modifications") ;
+    const videoDemoLink = formData.get("videoDemoLink") ;
+    const file = formData.get("uploadImage") ;
+    const milestone = formData.get("milestone") ;
 
     if (
       !description ||

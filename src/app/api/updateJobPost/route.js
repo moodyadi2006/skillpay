@@ -2,7 +2,7 @@ import dbConnect from "@/lib/dbConnect";
 import { JobModel } from "@/model/Employer";
 import mongoose from "mongoose";
 
-export async function POST(request: Request) {
+export async function POST() {
   await dbConnect();
 
   try {
