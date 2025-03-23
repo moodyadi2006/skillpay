@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export const Page = () => {
+const Page = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const [activeTab, setActiveTab] = useState("overview");
