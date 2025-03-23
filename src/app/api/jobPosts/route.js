@@ -2,7 +2,7 @@ import dbConnect from "@/lib/dbConnect";
 import { EmployerModel, JobModel } from "@/model/Employer";
 import mongoose from "mongoose";
 
-export async function GET() {
+export async function GET(request) {
   await dbConnect();
   try {
     // Extract email from query parameters
