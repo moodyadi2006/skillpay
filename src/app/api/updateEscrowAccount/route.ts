@@ -36,7 +36,7 @@ export async function PATCH(request: Request) {
     for (const job of jobs) {
       job.mileStones.forEach((mileStone: unknown) => {
         if (mileStone?.status === "completed") {
-          mileStone?.paid = true;
+          mileStone.paid = true;
         }
       });
 
