@@ -159,6 +159,7 @@ export const Page = () => {
         setAmount(paymentAmount);
         // Pass the amount directly to handlePayment
         await handlePayment(paymentAmount, freelancerId);
+        setFormSubmitted(true);
       } else {
         toast.error("Failed to approve work. Please try again.");
       }
@@ -244,13 +245,13 @@ export const Page = () => {
       );
 
       if (response.status === 200) {
-        toast.success("Work approved successfully");
+        toast.success("Work rejected successfully");
       } else {
-        toast.error("Failed to approve work. Please try again.");
+        toast.error("Failed to rejected work. Please try again.");
       }
     } catch (error) {
-      console.error("Error approving work:", error);
-      toast.error("An error occurred while approving the work.");
+      console.error("Error rejecting work:", error);
+      toast.error("An error occurred while rejecting the work.");
     }
   };
 
@@ -267,7 +268,6 @@ export const Page = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response);
       if (response.status === 200) {
         setFeedback("");
         toast.success("Work approved successfully");
@@ -869,7 +869,7 @@ export const Page = () => {
                     No Pending Reviews
                   </h3>
                   <p className="text-gray-500">
-                    You don't have any work submissions to review at the moment.
+                    You don&apos;t have any work submissions to review at the moment.
                   </p>
                 </div>
               )}

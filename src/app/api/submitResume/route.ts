@@ -8,10 +8,11 @@ export async function POST(request: Request) {
       requestBody = await request.json();
     } catch (error) {
       return new Response(
-        JSON.stringify({ error: "Invalid JSON format in request body" }),
+        JSON.stringify({ error: error }),
         {
           status: 400,
           headers: { "Content-Type": "application/json" },
+
         }
       );
     }

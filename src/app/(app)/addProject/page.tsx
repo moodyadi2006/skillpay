@@ -451,7 +451,7 @@ const Page = () => {
             Job Post Submitted!
           </h2>
           <p className="text-gray-600 mb-6">
-            Your job post for "{formData.title}" has been successfully created.
+            Your job post for &quot;{formData.title}&quot; has been successfully created.
           </p>
           <button
             onClick={() => {

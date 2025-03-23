@@ -120,7 +120,7 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-600">
                   Break projects into milestones and release payments only when
-                  you're satisfied with the completed work.
+                  you&apos;re satisfied with the completed work.
                 </p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start">
