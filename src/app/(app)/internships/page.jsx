@@ -452,7 +452,7 @@ const Page = () => {
                                 Payment Amount
                               </p>
                               <p className="text-blue-600 font-bold">
-                                ${mileStone.amount || "Not specified"}
+                              ₹{mileStone.amount || "Not specified"}
                               </p>
                             </div>
                             <div className="bg-green-50 p-3 rounded-lg">

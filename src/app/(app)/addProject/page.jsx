@@ -331,7 +331,7 @@ const Page = () => {
               handleTempInputChange(e, tempInput.mileStones.length - 1)
             }
             className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-300"
-            placeholder="Amount ($)"
+            placeholder="Amount (₹)"
             min="0"
           />
           <input
@@ -375,7 +375,7 @@ const Page = () => {
               >
                 <div>
                   <strong className="text-blue-800">Task:</strong> {item.task},{" "}
-                  <strong className="text-blue-800"> Amount:</strong> $
+                  <strong className="text-blue-800"> Amount:</strong> ₹
                   {item.amount},{" "}
                   <strong className="text-blue-800"> Completion:</strong>{" "}
                   {item.workCompletion || workCompletion}%
@@ -676,10 +676,10 @@ const Page = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  {renderFormField("Minimum Salary ($)", "salaryMin", "number")}
+                  {renderFormField("Minimum Salary (₹)", "salaryMin", "number")}
                 </div>
                 <div>
-                  {renderFormField("Maximum Salary ($)", "salaryMax", "number")}
+                  {renderFormField("Maximum Salary (₹)", "salaryMax", "number")}
                 </div>
               </div>
 

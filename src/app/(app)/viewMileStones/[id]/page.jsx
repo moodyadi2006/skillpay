@@ -130,7 +130,7 @@ const Page = () => {
                   <div className="bg-gray-50 p-3 rounded">
                     <div className="text-sm text-gray-500 mb-1">Amount</div>
                     <div className="font-semibold">
-                      ${mileStone.amount?.toLocaleString() || 0}
+                    ₹{mileStone.amount?.toLocaleString() || 0}
                     </div>
                   </div>
 

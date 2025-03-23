@@ -357,7 +357,7 @@ const Page = () => {
                                 {milestone.freelancer?.fullName || "Unknown"}
                               </p>
                               <p className="text-gray-500 text-sm">
-                                Amount: ${milestone.amount}
+                                Amount: ₹{milestone.amount}
                               </p>
                             </div>
                             <div className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">
@@ -440,7 +440,7 @@ const Page = () => {
                               {milestone.task}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              ${milestone.amount}
+                            ₹{milestone.amount}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                               {milestone.workCompletion}%
@@ -602,7 +602,7 @@ const Page = () => {
                                 {milestone.freelancer?.fullName || "Unknown"}
                               </p>
                               <p className="text-gray-500 text-sm">
-                                Amount: ${milestone.amount}
+                                Amount: ₹{milestone.amount}
                               </p>
                               <p className="text-gray-500 text-sm">
                                 Work Completion Contribution:{" "}

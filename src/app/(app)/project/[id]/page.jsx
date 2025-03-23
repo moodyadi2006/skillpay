@@ -292,7 +292,7 @@ const Page = () => {
                         task: {mileStone.task || `Milestone ${index + 1}`}
                       </h4>
                       <p className="text-gray-600 text-sm">
-                        Amount to be paid: ${mileStone.amount || "No Amount specified"}
+                        Amount to be paid: ₹{mileStone.amount || "No Amount specified"}
                       </p>
 
                       <p className="text-gray-600 text-sm">
