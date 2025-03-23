@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import { JobModel } from "@/model/Employer";
 
-export async function PATCH() {
+export async function PATCH(request) {
   await dbConnect();
 
   try {

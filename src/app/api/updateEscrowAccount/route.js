@@ -3,7 +3,7 @@ import { EmployerModel } from "@/model/Employer";
 import { JobModel } from "@/model/Employer";
 import dbConnect from "@/lib/dbConnect";
 
-export async function PATCH() {
+export async function PATCH(request) {
   await dbConnect();
   try {
     const { email, recipentId, amount, orderId } = await request.json();
