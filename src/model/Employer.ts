@@ -109,7 +109,7 @@ export const JobModel =
   mongoose.model<JobPost>("JobPost", JobSchema);
 
 export interface Payment {
-  recipient: string;
+  recipentId: string;
   amount: number;
   orderId: string;
 }
@@ -156,7 +156,7 @@ const EmployerSchema: Schema<Employer> = new Schema({
   },
   payments: [
     {
-      recipient: { type: String, required: true },
+      recipentId: { type: String, required: true },
       amount: { type: Number, required: true },
       orderId: { type: String, required: true },
     },

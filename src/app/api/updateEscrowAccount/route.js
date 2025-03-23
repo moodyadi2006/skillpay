@@ -57,10 +57,21 @@ export async function PATCH(request) {
 
     await newEscrow.save();
 
+    // Update employer's payments array
+    employer.payments.push({
+      recipentId: recipentId,
+      orderId,
+      amount,
+    });
+
+    await employer.save();
+
     return new Response(
       JSON.stringify({
-        message: "New escrow created successfully and milestones updated",
+        message:
+          "New escrow created successfully, milestones updated, and employer payments updated",
         escrow: newEscrow,
+        employerPayments: employer.payments,
       }),
       { status: 201 }
     );
