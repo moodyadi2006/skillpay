@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 
-export const Page = () => {
+const Page = () => {
   const router = useRouter();
   const params = useParams();
   const [isSubmitting, setIsSubmitting] = useState(false);

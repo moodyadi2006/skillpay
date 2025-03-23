@@ -20,7 +20,7 @@ import { Loader2, Mail, Lock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 
-export const Page = () => {
+const Page = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 

@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { signIn, useSession } from "next-auth/react";
 import { z } from "zod";
 
-export const Page = () => {
+const Page = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { data: session } = useSession();
