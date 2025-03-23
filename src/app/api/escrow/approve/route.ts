@@ -35,7 +35,10 @@ export async function PATCH(request: Request) {
     await EscrowModel.findByIdAndDelete(reviewId);
 
     return Response.json(
-      { message: "Milestones updated and Escrow deleted successfully" },
+      {
+        message: "Milestones updated and Escrow deleted successfully",
+        data: { totalAmount, freelancerId },
+      },
       { status: 200 }
     );
   } catch (error) {

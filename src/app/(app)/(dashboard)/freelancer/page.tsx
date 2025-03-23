@@ -45,7 +45,7 @@ export const Page = () => {
     fetchProjects();
   }, [session?.user?.email]); // Ensure it runs when email is available
 
-  const [pendingReviews, setPendingReviews] = useState([]);
+
   useEffect(() => {
     const fetchProjects = async () => {
       if (!session?.user?.email) return; // Ensure email exists
@@ -112,10 +112,9 @@ export const Page = () => {
     data.append("milestone", JSON.stringify(milestone));
 
     try {
-      const response = await axios.post("/api/escrow/submitWork", data, {
+      await axios.post("/api/escrow/submitWork", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      setPendingReviews(response.data.data);
       toast.success("Work submitted!");
       setIsOpen(false); // Close modal on success
     } catch (error) {

@@ -300,7 +300,7 @@ const Page = () => {
               </h2>
               <div className="w-16 h-1 bg-blue-500 mb-8"></div>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                We're here to provide you with more information, answer any
+                We&apos;re here to provide you with more information, answer any
                 questions you may have, and create an effective solution for
                 your internship and payment needs.
               </p>
@@ -455,7 +455,7 @@ const Page = () => {
             </h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Visit our office at the Tech Innovation Hub. We're conveniently
+              Visit our office at the Tech Innovation Hub. We&apos;re conveniently
               located in the heart of Learning City.
             </p>
           </div>
@@ -637,8 +637,8 @@ const Page = () => {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Whether you're a student looking for internships or a business
-            seeking payment solutions, we're here to help you succeed.
+            Whether you&apos;re a student looking for internships or a business
+            seeking payment solutions, we&apos;re here to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

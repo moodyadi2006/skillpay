@@ -361,7 +361,7 @@ const Page = () => {
         {/* Display Added Milestones - Only show if there are items */}
         {formData[field].length > 0 &&
           formData[field].map((item, index) => {
-            let workCompletion =
+            const workCompletion =
               totalTasks > 1
                 ? ((index / (totalTasks - 1)) * 100).toFixed(2)
                 : 100;

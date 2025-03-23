@@ -282,7 +282,7 @@ const Page = () => {
                 Expert Mediation
               </h3>
               <p className="text-gray-600 text-center">
-                Our expert mediation agent "Neutra" helps resolve any issues
+                Our expert mediation agent &quot;Neutra&quot; helps resolve any issues
                 between clients and freelancers fairly, ensuring a smooth
                 working relationship for all parties.
               </p>
@@ -456,9 +456,9 @@ const Page = () => {
                   ))}
                 </div>
                 <p className="text-lg text-gray-600 italic text-center mb-4">
-                  "SkillPay helped me turn my passion for teaching into a source
+                  &quot;SkillPay helped me turn my passion for teaching into a source
                   of income. The milestone payments keep everything
-                  transparent!"
+                  transparent!&quot;
                 </p>
                 <h4 className="text-xl font-semibold text-center text-gray-800">
                   Alex J.
@@ -485,9 +485,9 @@ const Page = () => {
                   ))}
                 </div>
                 <p className="text-lg text-gray-600 italic text-center mb-4">
-                  "I found an amazing coding instructor on SkillPay. The
+                &quot;I found an amazing coding instructor on SkillPay. The
                   sessions were interactive and their mediation team is super
-                  helpful!"
+                  helpful!&quot;
                 </p>
                 <h4 className="text-xl font-semibold text-center text-gray-800">
                   Priya M.
@@ -512,9 +512,9 @@ const Page = () => {
                   ))}
                 </div>
                 <p className="text-lg text-gray-600 italic text-center mb-4">
-                  "As an employer, I've found amazing talent through SkillPay.
+                &quot;As an employer, I&apos;ve found amazing talent through SkillPay.
                   The secure milestone payment system gives me complete peace of
-                  mind."
+                  mind.&quot;
                 </p>
                 <h4 className="text-xl font-semibold text-center text-gray-800">
                   Daniel R.
@@ -533,7 +533,7 @@ const Page = () => {
             Join Ski↑↑Pay Today
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-            Whether you're looking to teach, learn, find talent, or showcase
+            Whether you&apos;re looking to teach, learn, find talent, or showcase
             your skills, SkillPay offers a unique opportunity to grow and earn.
             Sign up today and become part of a thriving community with secure
             payments and expert support.

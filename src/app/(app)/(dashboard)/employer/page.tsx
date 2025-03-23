@@ -6,8 +6,6 @@ import axios from "axios";
 import { toast } from "sonner";
 import Footer from "../../Components/Footer";
 import {
-  Briefcase,
-  Search,
   LogIn,
   LogOut,
   CheckCircle,
@@ -39,7 +37,7 @@ export const Page = () => {
 
   const fetchPaymentStatus = async (orderId, paymentAmount, freelancerId) => {
     try {
-      const response = await axios.patch("/api/updateEscrowAccount", {
+      await axios.patch("/api/updateEscrowAccount", {
         email: session.user.email,
         recipentId: freelancerId,
         amount: paymentAmount,
@@ -94,7 +92,6 @@ export const Page = () => {
     fetchProjects();
   }, [session?.user?.email]); // Ensure it runs when email is available
 
-  const handleReview = (mileStone) => {};
   useEffect(() => {
     const fetchFreelancerProfile = async () => {
       if (notifications.length === 0) return; // Prevent unnecessary requests
@@ -155,7 +152,6 @@ export const Page = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response);
       if (response.status === 200) {
         toast.success("Work approved successfully");
         const paymentAmount = response.data.data.totalAmount;
@@ -194,7 +190,6 @@ export const Page = () => {
       const response = await axios.post("/api/checkout", {
         amount: paymentAmount,
       });
-      console.log(response, freelancerId);
       const order = response.data.message;
       await loadScript();
 
@@ -667,7 +662,6 @@ export const Page = () => {
                             <button
                               onClick={() => {
                                 setActiveTab("reviews");
-                                handleReview(milestone);
                               }}
                               className="text-blue-600 hover:text-blue-800 text-sm flex items-center"
                             >

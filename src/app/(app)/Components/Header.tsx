@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Briefcase, Search, List, LogIn, LogOut } from "lucide-react";
+import { Briefcase, LogIn, LogOut } from "lucide-react";
 import { useCallback } from "react";
 import axios from "axios";
 import { toast } from "sonner";
@@ -19,7 +19,7 @@ export default function Header() {
       console.error("Logout failed:", error);
       toast("Error while Logout");
     }
-  }, []);
+  }, [router]);
 
   return (
     <header className="fixed w-full bg-[#111] text-gray-400 flex justify-between items-center py-4 px-6 shadow-md z-50">

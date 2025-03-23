@@ -14,7 +14,7 @@ export const authOptions: NextAuthOptions = {
         identifier: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials: any): Promise<any> {
+      async authorize(credentials: unknown): Promise<unknown> {
         await dbConnect();
         try {
           // Check in FreelancerModel first
@@ -48,7 +48,7 @@ export const authOptions: NextAuthOptions = {
 
           // Attach userType to user object for NextAuth
           return { ...user.toObject(), role: userType };
-        } catch (error: any) {
+        } catch (error: unknown) {
           throw new Error(error.message);
         }
       },
@@ -62,7 +62,7 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async jwt({ token, user }: { token: any; user: any }) {
+    async jwt({ token, user }: { token: unknown; user: unknown }) {
       if (user) {
         token._id = user._id?.toString();
         token.isVerified = user.isVerified;
@@ -79,7 +79,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
 
-    async session({ session, token }: { session: any; token: any }) {
+    async session({ session, token }: { session: unknown; token: unknown }) {
       if (token) {
         session.user._id = token._id;
         session.user.isVerified = token.isVerified;

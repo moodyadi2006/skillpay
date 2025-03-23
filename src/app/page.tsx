@@ -380,7 +380,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                  "
+                &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl mr-4">
@@ -398,14 +398,14 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                  "The milestone payment system gave me complete control over my
-                  project budget. I only paid for work I was satisfied with."
+                &quot;The milestone payment system gave me complete control over my
+                  project budget. I only paid for work I was satisfied with.&quot;
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                  "
+                &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl mr-4">
@@ -423,14 +423,14 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                  "As a freelancer, I appreciate the secure payment system. I
-                  know I'll get paid for my work without any hassle."
+                &quot;As a freelancer, I appreciate the secure payment system. I
+                  know I'll get paid for my work without any hassle.&quot;
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                  "
+                &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xl mr-4">
@@ -448,9 +448,9 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                  "When we had a misunderstanding with a freelancer, the dispute
+                &quot;When we had a misunderstanding with a freelancer, the dispute
                   resolution team stepped in and helped us reach a fair
-                  solution."
+                  solution.&quot;
                 </p>
               </div>
             </div>

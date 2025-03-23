@@ -1,8 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import { JobModel } from "@/model/Employer";
-import mongoose from "mongoose";
 
-export async function GET(request: Request) {
+export async function GET() {
   await dbConnect();
   try {
     const response = await JobModel.find({});

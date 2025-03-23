@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { X, Upload, Plus, Trash2, Calendar } from "lucide-react";
+import { X, Plus, Trash2 } from "lucide-react";
 import { useSession } from "next-auth/react";
 
 // Modified Page component with form integration
@@ -110,13 +110,11 @@ const Page = () => {
         jobId: currentJobId,
       };
 
-      // Replace with your API endpoint to submit the resume
-      const response = await axios.post("/api/submitResume", {
+      
+      await axios.post("/api/submitResume", {
         data: dataToSubmit,
         userId: session.user._id,
       });
-      console.log(true);
-
       setSubmitSuccess(true);
       // Reset form after successful submission
       setResumeData({
