@@ -3,7 +3,7 @@ import { EmployerModel } from "@/model/Employer";
 import EscrowModel from "@/model/Escrow";
 import { FreelancerModel } from "@/model/Freelancer";
 
-export async function PATCH() {
+export async function PATCH(request) {
   await dbConnect();
   try {
     const { reviewId, feedback } = await request.json();

@@ -3,7 +3,7 @@ import dbConnect from "@/lib/dbConnect";
 import EscrowModel from "@/model/Escrow";
 import { JobModel } from "@/model/Employer";
 
-export async function POST() {
+export async function POST(request) {
   await dbConnect();
 
   try {
