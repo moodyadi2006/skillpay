@@ -6,9 +6,10 @@ export async function PATCH(request) {
   try {
     const { reviewId } = await request.json();
     const escrow = await EscrowModel.findById(reviewId)
-    
+    console.log(escrow.jobId.mileStones)
     const freelancerId =
       escrow?.jobId?.mileStones?.[0]?.freelancer?._id || null;
+      
 
     if (!escrow) {
       return Response.json({ message: "Escrow not found" }, { status: 404 });

@@ -46,6 +46,7 @@ const Page = () => {
       toast.success(
         "Payment has been successfully made by the Employer to Freelancer"
       );
+      setFormSubmitted(true);
     } catch (error) {
       console.error("Error processing payment:", error);
       toast.error(
@@ -156,10 +157,10 @@ const Page = () => {
         toast.success("Work approved successfully");
         const paymentAmount = response.data.data.totalAmount;
         const freelancerId = response.data.data.freelancerId;
+        console.log(paymentAmount, freelancerId);
         setAmount(paymentAmount);
         // Pass the amount directly to handlePayment
         await handlePayment(paymentAmount, freelancerId);
-        setFormSubmitted(true);
       } else {
         toast.error("Failed to approve work. Please try again.");
       }
