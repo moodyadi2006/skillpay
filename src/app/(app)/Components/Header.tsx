@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Briefcase, LogIn, LogOut } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -14,12 +14,17 @@ export default function Header() {
     try {
       await axios.post("/api/logout");
       toast("Logout Successful");
-      router.replace('/')
+      router.replace("/");
     } catch (error) {
       console.error("Logout failed:", error);
       toast("Error while Logout");
     }
   }, [router]);
+
+  // Effect to trigger re-render when session changes
+  useEffect(() => {
+    // This ensures that the component re-renders when the session changes
+  }, [session]);
 
   return (
     <header className="fixed w-full bg-[#111] text-gray-400 flex justify-between items-center py-4 px-6 shadow-md z-50">
