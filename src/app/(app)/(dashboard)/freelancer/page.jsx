@@ -45,7 +45,6 @@ const Page = () => {
     fetchProjects();
   }, [session?.user?.email]); // Ensure it runs when email is available
 
-
   useEffect(() => {
     const fetchProjects = async () => {
       if (!session?.user?.email) return; // Ensure email exists
@@ -97,6 +96,10 @@ const Page = () => {
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Ensure milestone is not empty
+    if (!milestone || Object.keys(milestone).length === 0) {
+      toast.error("Please wait until milestone is being set...");
+    }
 
     const data = new FormData();
     data.append("description", formData.description);
@@ -440,7 +443,7 @@ const Page = () => {
                               {milestone.task}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            ₹{milestone.amount}
+                              ₹{milestone.amount}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                               {milestone.workCompletion}%
@@ -448,8 +451,8 @@ const Page = () => {
                             <td
                               className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 cursor-pointer hover:bg-gray-100"
                               onClick={() => {
-                                setIsOpen(true);
                                 setMilestone(milestone);
+                                setIsOpen(true);
                               }}
                             >
                               Click to Add Work Details
