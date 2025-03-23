@@ -7,10 +7,16 @@ import {
   Row,
   Section,
   Text,
-} from '@react-email/components';
+} from "@react-email/components";
+interface VerificationEmailProps {
+  fullName: string;
+  otp: string | number;
+}
 
-
-export default function VerificationEmail({ fullName, otp }) {
+export default function VerificationEmail({
+  fullName,
+  otp,
+}: VerificationEmailProps) {
   return (
     <Html lang="en" dir="ltr">
       <Head>
@@ -19,8 +25,8 @@ export default function VerificationEmail({ fullName, otp }) {
           fontFamily="Roboto"
           fallbackFontFamily="Verdana"
           webFont={{
-            url: 'https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2',
-            format: 'woff2',
+            url: "https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2",
+            format: "woff2",
           }}
           fontWeight={400}
           fontStyle="normal"
@@ -38,7 +44,7 @@ export default function VerificationEmail({ fullName, otp }) {
           </Text>
         </Row>
         <Row>
-          <Text>{otp}</Text> 
+          <Text>{otp}</Text>
         </Row>
         <Row>
           <Text>
