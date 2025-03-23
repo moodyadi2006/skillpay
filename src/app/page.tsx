@@ -424,7 +424,7 @@ export default function Home() {
                 </div>
                 <p className="text-gray-600 italic">
                 &quot;As a freelancer, I appreciate the secure payment system. I
-                  know I'll get paid for my work without any hassle.&quot;
+                  know I&apos;ll get paid for my work without any hassle.&quot;
                 </p>
               </div>
 

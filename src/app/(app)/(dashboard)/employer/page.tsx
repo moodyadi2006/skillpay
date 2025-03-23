@@ -121,7 +121,7 @@ export const Page = () => {
   };
 
   const handleReject = async (resume) => {
-    const response = await axios.patch(
+    await axios.patch(
       "/api/removeResume",
       { resume },
       {
