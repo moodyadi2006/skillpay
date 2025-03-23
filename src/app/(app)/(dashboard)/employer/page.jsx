@@ -145,6 +145,7 @@ const Page = () => {
   };
 
   const handleApproveWork = async (reviewId) => {
+    console.log(reviewId)
     try {
       const response = await axios.patch(
         "/api/escrow/approve",
@@ -157,7 +158,6 @@ const Page = () => {
         toast.success("Work approved successfully");
         const paymentAmount = response.data.data.totalAmount;
         const freelancerId = response.data.data.freelancerId;
-        console.log(paymentAmount, freelancerId);
         setAmount(paymentAmount);
         // Pass the amount directly to handlePayment
         await handlePayment(paymentAmount, freelancerId);

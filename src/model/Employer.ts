@@ -90,8 +90,9 @@ const JobSchema: Schema<JobPost> = new Schema<JobPost>({
           default: "pending",
         },
         paid: {
-          type: Boolean
-        }
+          type: Boolean,
+          required: true,
+        },
       },
     ],
     required: [true, "Atleast one milestone should be present"], // Ensures at least one milestone must be present
