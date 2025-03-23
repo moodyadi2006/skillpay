@@ -128,12 +128,11 @@ const Page = () => {
                   </label>
                 </div>
                 <div className="text-sm">
-                  <Link
-                    href="/forgot-password"
+                  <button
                     className="text-blue-600 hover:text-blue-800"
                   >
                     Forgot your password?
-                  </Link>
+                  </button>
                 </div>
               </div>
               <Button
