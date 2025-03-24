@@ -9,7 +9,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 export async function sendVerificationEmail(email, fullName, verifyCode) {
-  
   try {
     await transporter.sendMail({
       from: '"SkillPay" <moodyadi30@gmail.com>',
@@ -41,8 +40,6 @@ export async function sendVerificationEmail(email, fullName, verifyCode) {
       </html>
       `,
     });
-    console.log(response);
-
     return { success: true, message: "Verification email sent successfully." };
   } catch (error) {
     console.error("Error sending verification email:", error);
