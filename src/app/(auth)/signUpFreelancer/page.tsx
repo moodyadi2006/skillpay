@@ -22,6 +22,7 @@ import axios from "axios";
 
 const Page = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const router = useRouter();
 
   // zod implementation
@@ -35,6 +36,10 @@ const Page = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
+    if (!isChecked) {
+      toast.error("Please accept the Terms and Conditions to proceed.");
+      return;
+    }
     setIsSubmitting(true);
     try {
       const response = await axios.post("/api/signUpFreelancer", data);
@@ -171,6 +176,8 @@ const Page = () => {
                       id="terms"
                       type="checkbox"
                       className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
                     />
                   </div>
                   <div className="ml-3 text-sm">
