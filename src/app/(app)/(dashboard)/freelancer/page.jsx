@@ -24,42 +24,33 @@ const Page = () => {
   const { data: session } = useSession();
   const [activeTab, setActiveTab] = useState("overview");
   const [projects, setProjects] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [milestone, setMilestone] = useState({});
 
   // Sample data for demonstration
   useEffect(() => {
-    const fetchProjects = async () => {
-      if (!session?.user?.email) return; // Ensure email exists
-
+    const fetchMultiples = async () => {
       try {
-        const response = await axios.get(
+        // Fetch Projects
+        const projectsResponse = await axios.get(
           `/api/fetchProjects?email=${encodeURIComponent(session.user.email)}`
         );
-        setProjects(response.data.data);
-      } catch (error) {
-        toast.error(error?.response.data.message);
-      }
-    };
 
-    fetchProjects();
-  }, [session?.user?.email]); // Ensure it runs when email is available
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      if (!session?.user?.email) return; // Ensure email exists
-
-      try {
-        const response = await axios.get(
+        // Fetch Pending Reviews
+        const reviewsResponse = await axios.get(
           `/api/fetchEscrowPendingReviews?email=${encodeURIComponent(session.user.email)}`
         );
-        setProjects(response.data.data);
+
+        // Merge responses or update separate states
+        setProjects(projectsResponse?.data.data);
+        setReviews(reviewsResponse?.data.data); // Assuming you need a separate state for reviews
       } catch (error) {
-        toast.error(error?.response.data.message);
+        toast.error(error?.response?.data?.message || "Something went wrong");
       }
     };
 
-    fetchProjects();
+    fetchMultiples();
   }, [session?.user?.email]);
 
   const handleLogout = async () => {
@@ -96,7 +87,6 @@ const Page = () => {
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ensure milestone is not empty
     if (!milestone || Object.keys(milestone).length === 0) {
       toast.error("Please wait until milestone is being set...");
     }
@@ -107,11 +97,9 @@ const Page = () => {
     data.append("modifications", formData.modifications);
     data.append("videoDemoLink", formData.videoDemoLink);
 
-    // Append single image correctly
     if (formData.uploadImage) {
       data.append("uploadImage", formData.uploadImage);
     }
-
     data.append("milestone", JSON.stringify(milestone));
 
     try {
@@ -119,7 +107,7 @@ const Page = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       toast.success("Work submitted!");
-      setIsOpen(false); // Close modal on success
+      setIsOpen(false);
       setFormData({
         description: "",
         githubRepoLink: "",
@@ -129,7 +117,7 @@ const Page = () => {
         milestone: {},
       });
     } catch (error) {
-      console.error(error)
+      console.error(error);
       toast.error(error.response.data.error);
     }
   };
@@ -343,9 +331,9 @@ const Page = () => {
                 <h2 className="text-xl font-semibold mb-4 text-gray-800">
                   Pending Reviews
                 </h2>
-                {projects.length > 0 ? (
-                  projects.map((project) =>
-                    project.mileStones
+                {reviews.length > 0 ? (
+                  reviews.map((review) =>
+                    review.mileStones
                       ?.filter((milestone) => milestone.status === "in-review")
                       .map((milestone) => (
                         <div
@@ -355,7 +343,7 @@ const Page = () => {
                           <div className="flex justify-between items-start">
                             <div>
                               <h3 className="font-medium">
-                                {project.companyName}
+                                {review.companyName}
                               </h3>
                               <p className="text-gray-500">
                                 Milestone: {milestone.task}

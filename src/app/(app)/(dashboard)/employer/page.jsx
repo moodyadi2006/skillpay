@@ -47,6 +47,9 @@ const Page = () => {
         "Payment has been successfully made by the Employer to Freelancer"
       );
       setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 3000);
     } catch (error) {
       console.error("Error processing payment:", error);
       toast.error(
@@ -75,7 +78,7 @@ const Page = () => {
 
     fetchEscrows();
   }, [activeTab, projects, amount]);
-  // Sample data for demonstration
+
   useEffect(() => {
     const fetchProjects = async () => {
       if (!session?.user?.email) return; // Ensure email exists
@@ -91,7 +94,7 @@ const Page = () => {
     };
 
     fetchProjects();
-  }, [session?.user?.email]); // Ensure it runs when email is available
+  }, [session?.user?.email]);
 
   useEffect(() => {
     const fetchFreelancerProfile = async () => {
@@ -145,7 +148,7 @@ const Page = () => {
   };
 
   const handleApproveWork = async (reviewId) => {
-    console.log(reviewId)
+    console.log(reviewId);
     try {
       const response = await axios.patch(
         "/api/escrow/approve",
@@ -271,7 +274,7 @@ const Page = () => {
       );
       if (response.status === 200) {
         setFeedback("");
-        toast.success("Work approved successfully");
+        toast.success("Work sent for review successfully");
       } else {
         toast.error("Failed to approve work. Please try again.");
       }
@@ -730,7 +733,7 @@ const Page = () => {
                               {milestone.task}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            ₹{milestone.amount}
+                              ₹{milestone.amount}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                               {milestone.workCompletion}%

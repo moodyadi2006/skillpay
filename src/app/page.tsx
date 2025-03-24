@@ -1,13 +1,57 @@
+"use client";
 import Image from "next/image";
 import Footer from "./(app)/Components/Footer";
-import Header from "./(app)/Components/Header";
-import Link from "next/link";
 import { ArrowRight, Check, Globe, Shield, Award, Users } from "lucide-react";
+import Link from "next/link";
+import { Briefcase, LogIn } from "lucide-react";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <header className="fixed w-full bg-[#111] text-gray-400 flex justify-between items-center py-4 px-6 shadow-md z-50">
+        <Link href="/" className="text-4xl font-extrabold text-white">
+          Ski↑↑<span className="text-blue-500">Pay</span>
+        </Link>
+
+        <nav className="flex space-x-6">
+          {[
+            {
+              href: "/internships",
+              icon: <Briefcase className="w-6 h-6 text-white" />,
+              label: "Internships",
+            },
+          ].map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="relative group"
+              aria-label={item.label}
+            >
+              <div className="flex items-center justify-center relative">
+                <div className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg group-hover:scale-110">
+                  {item.icon}
+                </div>
+                <p className="absolute top-full mt-1 px-3 py-1 bg-blue-500 text-white rounded-lg text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:translate-y-1 shadow-md">
+                  {item.label}
+                </p>
+              </div>
+            </Link>
+          ))}
+
+          <Link
+            href="/signIn"
+            className="relative group flex items-center justify-center"
+            aria-label="Login"
+          >
+            <div className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg group-hover:scale-110">
+              <LogIn className="w-6 h-6 text-white" />
+            </div>
+            <p className="absolute top-full mt-1 px-3 py-1 bg-blue-500 text-white rounded-lg text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:translate-y-1 shadow-md">
+              Login
+            </p>
+          </Link>
+        </nav>
+      </header>
 
       <main>
         {/* Hero Section with enhanced gradient and animation */}
@@ -380,7 +424,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                &quot;
+                  &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl mr-4">
@@ -398,14 +442,15 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                &quot;The milestone payment system gave me complete control over my
-                  project budget. I only paid for work I was satisfied with.&quot;
+                  &quot;The milestone payment system gave me complete control
+                  over my project budget. I only paid for work I was satisfied
+                  with.&quot;
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                &quot;
+                  &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl mr-4">
@@ -423,14 +468,15 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                &quot;As a freelancer, I appreciate the secure payment system. I
-                  know I&apos;ll get paid for my work without any hassle.&quot;
+                  &quot;As a freelancer, I appreciate the secure payment system.
+                  I know I&apos;ll get paid for my work without any
+                  hassle.&quot;
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition relative">
                 <div className="absolute -top-4 -right-2 text-blue-300 text-6xl opacity-20">
-                &quot;
+                  &quot;
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xl mr-4">
@@ -448,8 +494,8 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                &quot;When we had a misunderstanding with a freelancer, the dispute
-                  resolution team stepped in and helped us reach a fair
+                  &quot;When we had a misunderstanding with a freelancer, the
+                  dispute resolution team stepped in and helped us reach a fair
                   solution.&quot;
                 </p>
               </div>
